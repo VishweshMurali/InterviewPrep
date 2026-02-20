@@ -42,10 +42,14 @@ env/
 
 # Project specific
 data/chroma_db/
-data/documents/*.pdf
-data/documents/*.txt
+data/documents/
 logs/
 *.log
+
+# Study materials (reference, notes, etc.) - do not track in git
+reference/
+study_notes/
+study/
 
 # Streamlit
 .streamlit/secrets.toml

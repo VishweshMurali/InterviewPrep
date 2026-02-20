@@ -53,14 +53,6 @@ class VerificationAgent:
             "tier": "free",
             "signup": "aistudio.google.com"
         },
-        {
-            "name": "OpenAI-GPT4o-mini",
-            "model": "gpt-4o-mini",
-            "provider": "openai",
-            "env_key": "OPENAI_API_KEY",
-            "tier": "paid",
-            "signup": "platform.openai.com"
-        },
     ]
     
     def __init__(self):
@@ -199,16 +191,6 @@ Scoring:
                 response = model.generate_content(prompt)
                 raw = response.text.strip()
                 
-            elif judge["provider"] == "openai":
-                from openai import OpenAI
-                client = OpenAI(api_key=os.getenv(judge["env_key"]))
-                response = client.chat.completions.create(
-                    model=judge["model"],
-                    messages=[{"role": "user", "content": prompt}],
-                    temperature=0.1,
-                    max_tokens=300
-                )
-                raw = response.choices[0].message.content.strip()
             else:
                 return None
                 

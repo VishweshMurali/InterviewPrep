@@ -9,6 +9,7 @@ import re
 import os
 from pathlib import Path
 from dotenv import load_dotenv
+from langchain.prompts import PromptTemplate
 
 # Load .env from project root (2 levels up from src/)
 load_dotenv(dotenv_path=Path(__file__).parent.parent / ".env", override=True)

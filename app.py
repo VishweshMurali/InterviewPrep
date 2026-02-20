@@ -250,8 +250,9 @@ with st.sidebar:
 
 
 # ── MAIN TABS ──────────────────────────────────────────────────────────────────
-tab_quiz, tab_upload, tab_resume, tab_jd, tab_eval, tab_map, tab_progress = st.tabs([
-    "Quiz", "Documents", "Resume", "Job Description", "Model Evaluation", "Knowledge Map", "Progress"
+# Documents first so user uploads study material before Quiz
+tab_upload, tab_quiz, tab_resume, tab_jd, tab_eval, tab_map, tab_progress = st.tabs([
+    "Documents", "Quiz", "Resume", "Job Description", "Model Evaluation", "Knowledge Map", "Progress"
 ])
 
 
