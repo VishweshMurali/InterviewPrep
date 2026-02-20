@@ -1,0 +1,210 @@
+# Python, DSA & Machine Learning - Study Notes
+# SkillMapper Sample Knowledge Base
+
+## PYTHON BASICS
+
+### Variables and Data Types
+Python is a dynamically typed language. Variables don't need explicit type declaration.
+- int: whole numbers (1, 2, 100)
+- float: decimal numbers (3.14, 2.0)
+- str: text ("hello", 'world')
+- bool: True or False
+- list: ordered mutable collection [1, 2, 3]
+- tuple: ordered immutable collection (1, 2, 3)
+- dict: key-value pairs {"key": "value"}
+- set: unordered unique elements {1, 2, 3}
+
+### Functions
+Functions are defined using the `def` keyword. They can accept parameters and return values.
+A function encapsulates reusable logic. Key concepts:
+- Parameters vs Arguments
+- Default parameter values
+- *args (variable positional args)
+- **kwargs (variable keyword args)
+- Return values
+- Scope (local vs global)
+
+### Object Oriented Programming (OOP)
+OOP is a paradigm that organizes code into objects with attributes and methods.
+- Class: Blueprint for creating objects
+- Object: Instance of a class
+- Encapsulation: Hiding internal state
+- Inheritance: Child class inherits from parent
+- Polymorphism: Same interface, different behavior
+- Abstraction: Hiding complex implementation
+
+### Recursion
+Recursion is when a function calls itself. Every recursive function needs:
+1. A BASE CASE — the condition to stop recursion
+2. A RECURSIVE CASE — the function calling itself with a simpler input
+Example: Factorial(n) = n * Factorial(n-1), base case: Factorial(0) = 1
+Common recursion problems: Fibonacci, Tower of Hanoi, Tree traversal
+
+### Error Handling
+Python uses try-except blocks to handle errors gracefully.
+- try: code that might raise an exception
+- except: code to run when exception occurs
+- else: runs if no exception occurred
+- finally: always runs, used for cleanup
+Common exceptions: ValueError, TypeError, IndexError, KeyError, FileNotFoundError
+
+### List Comprehension
+A concise way to create lists. Syntax: [expression for item in iterable if condition]
+Example: [x**2 for x in range(10) if x % 2 == 0]
+This is more Pythonic and often faster than a regular for loop.
+
+### Decorators
+Decorators modify the behavior of functions without changing their source code.
+They use the @ syntax. Common uses: logging, timing, authentication.
+A decorator is itself a function that takes a function and returns a modified function.
+
+### Generators
+Generators are functions that yield values one at a time using the `yield` keyword.
+They are memory-efficient because they don't store all values at once.
+The `yield` statement pauses execution and returns a value.
+
+---
+
+## DATA STRUCTURES & ALGORITHMS (DSA)
+
+### Arrays
+An array is a collection of elements stored at contiguous memory locations.
+- Access: O(1)
+- Search: O(n)
+- Insert at end: O(1) amortized
+- Insert at beginning: O(n)
+- Delete: O(n)
+Python lists are dynamic arrays.
+
+### Linked Lists
+A linked list is a sequence of nodes where each node has data and a pointer to the next node.
+Types: Singly Linked, Doubly Linked, Circular
+- Access: O(n)
+- Insert at head: O(1)
+- Search: O(n)
+No random access unlike arrays.
+
+### Stacks
+Stack is LIFO (Last In First Out). Operations: push, pop, peek.
+Use cases: Function call stack, undo functionality, expression evaluation.
+Time complexity for push/pop: O(1)
+
+### Queues
+Queue is FIFO (First In First Out). Operations: enqueue, dequeue.
+Use cases: BFS, task scheduling, print spooling.
+Types: Simple Queue, Circular Queue, Deque, Priority Queue.
+
+### Trees
+A tree is a hierarchical data structure. A Binary Tree has at most 2 children per node.
+Key terms: root, leaf, height, depth, parent, child
+- Binary Search Tree (BST): left < root < right
+- Traversals: Inorder, Preorder, Postorder, Level-order
+- Balanced BST: AVL Tree, Red-Black Tree
+
+### Graphs
+A graph is a set of nodes (vertices) connected by edges.
+Types: Directed, Undirected, Weighted, Unweighted
+Representations: Adjacency Matrix, Adjacency List
+Algorithms: BFS, DFS, Dijkstra, Bellman-Ford, Floyd-Warshall
+
+### Sorting Algorithms
+- Bubble Sort: O(n²) — compare adjacent elements
+- Selection Sort: O(n²) — select minimum each pass
+- Insertion Sort: O(n²) — insert into sorted portion
+- Merge Sort: O(n log n) — divide and conquer
+- Quick Sort: O(n log n) average — pivot-based partitioning
+- Heap Sort: O(n log n) — uses a heap data structure
+
+### Searching Algorithms
+- Linear Search: O(n) — check each element
+- Binary Search: O(log n) — divide sorted array in half
+Binary search requires a sorted array. It repeatedly halves the search space.
+
+### Dynamic Programming (DP)
+DP is an optimization technique that solves problems by breaking them into overlapping subproblems.
+Two approaches: Top-Down (Memoization) and Bottom-Up (Tabulation)
+Key insight: Store results of subproblems to avoid recomputation.
+Classic DP problems: Fibonacci, Longest Common Subsequence, 0/1 Knapsack, Coin Change
+
+### Hashing
+Hashing converts data into a fixed-size value (hash code) using a hash function.
+Hash Table: stores key-value pairs for O(1) average lookup.
+Collision resolution: Chaining (linked list at each slot) or Open Addressing.
+Python dict uses hashing internally.
+
+---
+
+## MACHINE LEARNING
+
+### Supervised Learning
+Supervised learning uses labeled training data to learn a mapping from inputs to outputs.
+The algorithm learns from examples: (input, correct output) pairs.
+Goal: generalize to predict outputs for new, unseen inputs.
+Types: Regression (continuous output), Classification (discrete output)
+
+### Unsupervised Learning
+Unsupervised learning finds patterns in data WITHOUT labeled examples.
+Goal: discover hidden structure in unlabeled data.
+Methods: Clustering (K-Means, DBSCAN), Dimensionality Reduction (PCA, t-SNE)
+
+### Regression
+Regression predicts a continuous numerical value.
+- Linear Regression: fits a straight line y = mx + b
+- Multiple Regression: multiple input features
+- Polynomial Regression: curved relationships
+Key metric: Mean Squared Error (MSE), R² Score
+
+### Classification
+Classification predicts which category/class an input belongs to.
+- Logistic Regression: binary classification using sigmoid function
+- Decision Trees: tree-based splitting on features
+- Random Forest: ensemble of decision trees
+- Support Vector Machine (SVM): finds optimal hyperplane
+Key metrics: Accuracy, Precision, Recall, F1-Score, ROC-AUC
+
+### Overfitting
+Overfitting occurs when a model learns the training data TOO well, including noise.
+Result: High training accuracy, low test accuracy.
+Solutions: Regularization (L1/L2), Dropout, More training data, Cross-validation, Simpler model.
+Underfitting: model too simple, low accuracy on both train and test.
+
+### Feature Engineering
+Feature engineering transforms raw data into better input representations for ML models.
+Techniques:
+- Normalization / Standardization
+- One-Hot Encoding (for categorical variables)
+- Feature Selection (removing irrelevant features)
+- Feature Creation (combining existing features)
+- Handling missing values (imputation)
+
+### Model Evaluation
+How to measure if your model is good:
+- Train/Test Split: 80/20 or 70/30
+- Cross-Validation (k-Fold): more robust evaluation
+- Confusion Matrix: TP, TN, FP, FN
+- Precision = TP / (TP + FP)
+- Recall = TP / (TP + FN)
+- F1 Score = 2 * (Precision * Recall) / (Precision + Recall)
+
+### Neural Networks
+Inspired by the human brain. Composed of layers of neurons.
+- Input Layer: receives features
+- Hidden Layers: learn representations
+- Output Layer: produces predictions
+Activation functions: ReLU, Sigmoid, Tanh, Softmax
+Training: Backpropagation + Gradient Descent
+
+### Deep Learning
+Deep Learning uses neural networks with many layers (deep networks).
+Applications: Image recognition (CNNs), NLP (RNNs, Transformers), Audio
+Key architectures: CNN, RNN, LSTM, Transformer, GAN
+
+### NLP Basics
+Natural Language Processing enables machines to understand human language.
+Key concepts:
+- Tokenization: splitting text into words/tokens
+- Embeddings: representing words as vectors (Word2Vec, GloVe)
+- Sentiment Analysis: positive/negative/neutral
+- Named Entity Recognition (NER)
+- Transformers and BERT
+- Large Language Models (LLMs)
